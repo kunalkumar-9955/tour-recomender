@@ -1,0 +1,16 @@
+{
+  "name": "ai-tour-recommender",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["web", "api"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace web\" \"npm run dev --workspace api\"",
+    "dev:ml": "npm --prefix ml-service run dev",
+    "dev:all": "concurrently \"npm run dev --workspace web\" \"npm run dev --workspace api\" \"npm --prefix ml-service run dev\"",
+    "build": "npm run build --workspace web && npm run build --workspace api",
+    "start": "npm run start --workspace web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
